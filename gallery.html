@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - VTCSRao</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+DE+Grund+Guides&family=Ysabeau+SC:wght@1..1000&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: hsla(0, 2%, 38%, 0.213);
+        }
+
+        .carousel {
+            background-image: url('/images/gall-main.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            margin : 0;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 50px;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo img {
+            width: 100px;
+        }
+
+        .navbar .nav li {
+            font-family: "Noto Sans", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-size: 22px;
+            font-style: normal;
+            padding : 0 15px;
+            display: inline-block;
+            margin: 20px 10px;
+        }
+
+        .navbar .nav li a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .navbar .nav li a {
+            text-decoration: none;
+            color: hsl(0, 4%, 14%);
+        }
+
+        .navbar .nav-btn {
+            background-color: hwb(0 6% 94% / 0.572);
+            color: hsl(0, 19%, 90%);
+            border: none;
+            border-radius: 22px;
+            padding: 10px 22px;
+            font-family: "Noto Sans", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-size: 18px;
+            font-style: normal;
+            cursor: pointer;
+        }
+
+        .navbar .nav-btn a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar .nav-btn:hover {
+            background-color: rgba(15, 15, 15, 0.959);
+            color: hsl(0, 19%, 90%);
+        }
+
+        .matter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .matter h1 {
+            font-family: "Ysabeau SC", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-size: 40px;
+            color :hwb(0 13% 87% / 0.922);
+            margin-top: 0;
+            margin-bottom : 0px;
+            padding-bottom: 20px;
+        }
+
+        .matter h2 {
+            font-family: "Noto sans", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 115px;
+            color :rgba(255, 255, 255, 0.864);
+            margin-top : 0px;
+            margin-bottom : 50px; 
+        }
+
+        .car-btn {
+            background-color: rgba(15, 15, 15, 0.871);
+            color: hsl(0, 19%, 90%);
+            border: none;
+            border-radius: 22px;
+            padding: 10px 22px;
+            font-family: "Noto Sans", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-size: 18px;
+            font-style: normal;
+            cursor: pointer;
+        }
+
+        .gallery-cont {
+            background-color: #050505ef;
+
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 60px;
+            gap: 60px;
+        }
+
+        .gallery-info {
+            text-align: center;
+            margin-bottom: 40px;
+            width : 100%;
+        }
+
+        .gallery-item {
+            background-color: hwb(0 16% 83% / 0);
+            border: 1px solid rgba(255, 254, 254, 0.335);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px #9e8282d1;
+            width: 550px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .gallery-item h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .gallery-item p {
+            font-size: 14px;
+            color: hsl(0, 15%, 88%);
+            margin-top: 10px;
+        }
+
+        .gallery-info h1 {
+            font-family: "Noto Sans", serif;
+            font-optical-sizing: auto;
+            font-weight: 680;
+            font-size: 50px;
+            color :#f1e8e8;
+            margin-top: 0;
+            margin-bottom : 0px;
+            padding-bottom: 10px;
+            margin-top : 30px;
+        }
+
+        .gallery-info h2 {
+            font-family: "DM Sans", serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 35px;
+            color :#0081FB;
+            margin-top : 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="navbar">
+            <div class="logo">
+                <img src="#" alt="logo">
+            </div>
+            <div class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="https://www.blogger.com/go/createyourblog">Blogs</a></li>
+                <li><a href="index.html/#footer">Contact US</a></li>
+                <button class="nav-btn">Book an Appointment</button>
+            </div>
+        </div>
+        <div class="matter">
+            <h1>LEARN BEST FROM THE VISIONARY MELIORIST</h1>
+            <h2>G A L L E R Y</h2>
+            <button class="car-btn">EXPLORE NOW</button>
+        </div>
+    </div>
+    <div class="gallery-cont">
+        <div class="gallery">
+            <div class="gallery-info">
+                <h1>OUR EXECUTIVE COACHING GALLERY</h1>
+                <h2>EXPLORE OUR COACHING SERVICES WITH HIGH QUALITY IMAGES AND VIDEOS</h2>
+            </div>
+            <div id="gallery-items"></div>
+        </div>
+    </div>
+    
+    <script>
+        const media = [
+            // Example media items
+            { title: 'Image 1', mediaType: 'image', url: 'image1.jpg', description: 'Description 1' },
+            { title: 'Video 1', mediaType: 'video', url: 'video1.mp4', description: 'Description 2' }
+            // Add more media items as needed
+        ];
+    
+        const galleryItemsContainer = document.getElementById('gallery-items');
+    
+        media.forEach(item => {
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+    
+            const title = document.createElement('h2');
+            title.textContent = item.title;
+            galleryItem.appendChild(title);
+    
+            if (item.mediaType === 'image') {
+                const img = document.createElement('img');
+                img.src = item.url;
+                img.alt = item.title;
+                galleryItem.appendChild(img);
+            } else if (item.mediaType === 'video') {
+                const video = document.createElement('video');
+                video.controls = true;
+                const source = document.createElement('source');
+                source.src = item.url;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                video.textContent = 'Your browser does not support the video tag.';
+                galleryItem.appendChild(video);
+            }
+    
+            const description = document.createElement('p');
+            description.textContent = item.description;
+            galleryItem.appendChild(description);
+    
+            galleryItemsContainer.appendChild(galleryItem);
+        });
+    </script>
+</body>
+</html>

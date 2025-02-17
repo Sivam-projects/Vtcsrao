@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTCSRAO-Home</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Afacad+Flux:wght@100..1000&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+DE+Grund+Guides&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Ysabeau+SC:wght@1..1000&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: hwb(0 7% 93% / 0.991);
+        }
+
+        .main-cont {
+            background-image: url('/images/main.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width : 100%;
+            height: 100vh;
+        }
+
+        .nav-cont {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 100px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-content li {
+            list-style: none;
+            margin-right: 30px;
+            padding-right : 10px;
+        }
+
+        .nav-content li a {
+            font-family: 'DM Sans', sans-serif;
+            text-decoration: none;
+            color: #f0ebeb;
+            font-weight: 800;
+            font-size: 22px;
+        }
+
+        .nav-content li a:hover {
+            border : solid;
+            border-color: hsl(0, 7%, 3%);
+            border-radius: 15px;
+            padding : 1px 15px;
+        }
+
+        .carousel {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            margin-top: 100px;
+            align-content: center;
+            justify-content: flex-end;
+        }
+
+        .car-content {
+            padding: 60px 160px;
+            width : 45%;
+        }
+
+        .car-content h1 {
+            font-family : 'DM Sans', sans-serif;
+            font-size: 55px;
+            font-weight : 950;
+            color: #000000e6;
+            padding-top : 10px;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+        .car-content h2 {
+            font-family : 'DM Sans', sans-serif;
+            font-size: 50px;
+            font-weight : 800;
+            color: hsla(0, 9%, 86%, 0.955);
+            padding-bottom : 20px;
+            margin : 0;
+        }
+
+        .car-content p {
+            width : 80%;
+            font-family : 'Oswald', sans-serif;
+            font-size: 23px;
+            font-weight : 520;
+            color: hsla(0, 0%, 0%, 0.957);
+            padding-bottom : 20px;
+            margin : 0;
+        }
+
+        .car-content .btn {
+            padding: 9px 30px;
+            background-color: hsl(0, 5%, 9%);
+            border: none;
+            border-radius: 20px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 550;
+            color: hsla(0, 22%, 93%, 0.902);
+            cursor: pointer;
+        }
+
+        .car-content .btn a {
+            text-decoration: none;
+            color: hsla(0, 22%, 93%, 0.902);
+        }
+
+        .service-cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 100px;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px 50px;
+            margin: 50px 0;
+            width : 90%;
+            height: auto;
+        }
+
+        .image {
+            width: 90%;
+            height : auto;
+        }
+
+        .image img {
+            border-radius: 15px;
+            box-shadow: 0 1px 2px 0 #8f919287, 0 6px 20px 0 rgba(132, 133, 136, 0.451);;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head-cont {
+            padding-bottom : 0px;
+        }
+
+        .head-cont h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 60px;
+            font-weight: 800;
+            color: hwb(0 88% 8%);
+            margin: 50px 0px;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 31px;
+            font-weight: 800;
+            color: #0081FB;
+            margin: 0;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .content p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            width : 80%;
+            color: hsla(0, 16%, 83%, 0.894);
+            margin: 0;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .head-cont2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top : 0px;
+            padding-bottom: 30px;
+        }
+
+        .head-cont2 h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 60px;
+            font-weight: 700;
+            color: #0081FB;
+            margin: 25px 0px;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .head-cont2 h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: hsla(0, 22%, 90%, 0.925);
+            margin: 0;
+            padding-top: 5px;
+            padding-bottom : 10px;
+            width : 70%;
+            text-align: center;
+        }
+
+        .head-cont2 .btn {
+            padding: 9px 30px;
+            background-color: #0081FB;
+            border: none;
+            border-radius: 20px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 550;
+            margin : 30px 0;
+            color: hsla(0, 22%, 93%, 0.902);
+            cursor: pointer;
+        }
+
+        .head-cont2 .btn a {
+            text-decoration: none;
+            color: hsla(0, 22%, 93%, 0.902);
+        }
+
+        .head-cont2 .btn:hover {
+            background-color: hwb(252 60% 25%);
+        }
+        
+        .appointment-container {
+            padding: 20px;
+            color : white;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px #7170706a;
+            max-width: 450px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .appointment-container:hover {
+            box-shadow: 0 4px 8px 0 hsla(209, 100%, 49%, 0.922), 0 6px 20px 0 hsla(209, 100%, 49%, 0.922);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .appointment-head {
+            text-align: center;
+            font-family: "DM Sans", Sans-serif;
+            font-size: 40px;
+            line-height: 1.1em;
+            letter-spacing: -0.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        form fieldset {
+            border: none;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form legend {
+            font-family: "Montserrat", sans-serif;
+            font-size: 17px;
+            font-weight: 370;
+            font-weight: 450;
+            line-height: 1.4em;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        form label {
+            display: block;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4em;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form input[type="date"] {
+            width: 100%;
+            background-color: hwb(0 33% 67% / 0.656);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid hsl(0, 3%, 53%);
+            border-radius: 15px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form .two-cols {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form .two-cols label {
+            flex: 1;
+        }
+
+        form .inline {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form .inline label {
+            flex: 1;
+        }
+
+        form .btns {
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #555;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        footer {
+            background-color: hwb(0 4% 96% / 0.982);
+            color: #fff;
+            width: 100%;
+            height: auto;
+        }
+
+        .footer-container {
+            font-family: "Montserrat", sans-serif;
+            font-size: 17px;
+            font-weight: 300;
+            display: flex;
+            color :hwb(0 84% 14%);
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding-top:20px;
+            padding-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
+            width: 100%;
+            height: auto;
+        }
+        .footer-card1 {
+            width : 28%;
+        }
+
+        .footer-card1 p {
+            font-family: "Montserrat", sans-serif;
+            font-size: 17px;
+            font-weight: 370;
+            line-height: 1.4em;
+            padding-top : 1px;
+        }
+
+        .footer-card2 {
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .footer-card2 .mail-class,
+        .footer-card2 .phone-class,
+        .footer-card2 .youtube-class,
+        .footer-card2 .linkedin-class {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .mail-class .phone-class
+        .youtube-class .linkedin-class {
+            padding-top : 5px;
+            padding-bottom: 5px;
+        }
+        .mail-class i {
+            align-content: center;
+            padding-right : 20px;
+        }
+
+        .phone-class i {
+            align-content: center;
+            padding-right : 20px;
+        }
+
+        .youtube-class i {
+            align-content: center;
+            padding-right: 20px;
+        }
+
+        .linkedin-class i {
+            align-content: center;
+            padding-right: 20px;
+        }
+
+        .mail-class p a {
+            color: hwb(0 84% 14%);
+            text-decoration: none;
+        }
+
+        .phone-class p a {
+            color: hwb(0 84% 14%);
+            text-decoration: none;
+        }
+
+        .youtube-class p a {
+            color: hwb(0 84% 14%);
+            text-decoration: none;
+        }
+
+        .linkedin-class p a {
+            color: hwb(0 84% 14%);
+            text-decoration: none;
+        }
+        .copy-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 1px;
+            background-color: hwb(0 4% 96% / 0.982);
+            color: hwb(0 84% 14%);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .copy-right h1 {
+            font-family: "Host Grotesk", sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            padding-top :1px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-cont">
+        <div class="nav-cont">
+            <div class="img">
+                <img src="icon.jpg" alt="">
+            </div>
+            <div class="nav-content">
+                <li><a href="https://www.blogger.com/go/createyourblog">Blogs</a></li>
+                <li><a href="/gallery.html">Courses</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="#book-appointment">Book Now</a></li>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="car-content">
+                <h1>THE MELIORIST MENTOR</h1>
+                <h2>VT Chandrashekar Rao</h2>
+                <p>My mission is to help project owners, consultants and Contractors to achieve efficiency and excellence in project Management and Executive Coaching</p>
+                <button class="btn"><a href="#">Get in Touch</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="head-cont">
+        <h1>Resellient.. Hard Working.. Success..</h1>
+    </div>
+    <div class="service-cont">
+        <div class="card">
+            <div class="image">
+                <img src="/images/sc1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>My Motive</h1>
+                <p>My Motive is to help project owners, by offering a wide range of services to facilitate improvement in alignment, productivity, organizational effectiveness, teambuilding and team relations to ensure superior project performance​. We aim to improve the client business performance through enabling execution excellence and effective project delivery and help business owners implement a solid execution plan and a robust contracting strategy for their projects</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h1>My Mission</h1>
+                <p>My mission as a Executive Coach/ Spiritual Coach is to empower and inspire my clients to live a life that is authentic, fulfilling, and aligned with their core values. I believe that everyone has the potential to create positive change in their lives, and I am here to support you on your journey towards personal and professional growth and transformation.</p>
+            </div>
+            <div class="image">
+                <img src="/images/sc2.jpg" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="/images/sc3.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>My Approach</h1>
+                <p>My approach to coaching is rooted in positive psychology, mindfulness, and cognitive-behavioral therapy, reinforced by the great insights from Indian Intellectual Tradition. I work collaboratively with my clients to help them identify their strengths, overcome limiting beliefs, and develop practical strategies for achieving their goals. I believe that coaching is a process of self-discovery, and I am committed to providing a supportive and non-judgmental space for my clients to explore their inner world.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h1>My Services</h1>
+                <p>I offer a range of coaching services, including one-on-one coaching sessions, team coaching, alignment workshops, and online courses. My areas of expertise include executive coaching, project leadership coaching, business leadership coaching, and personal development. Contact me today to learn more about how I can help you achieve your goals and be the best version of you.</p>
+            </div>
+            <div class="image">
+                <img src="/images/sc4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="head-cont2">
+        <h1>40+ Years of Experience as Project Manager</h1>
+        <h2>Transform your life and achieve your goals with personalized executive coaching</h2>
+        <button class="btn"><a href="#book-appointment"></a>Get Started Now</button>
+    </div>
+    <section id="book-appointment" class="book-appointment">
+        <div class="appointment-container">
+            <h1 class="appointment-head">Book an Appointment</h1>
+            <form action="https://formspree.io/f/xkgnzjle" method="POST">
+                <fieldset>
+                    <legend>For person</legend>
+                    <label>
+                        Name
+                        <input type="text" name="name" required>
+                    </label>
+                    <div class="two-cols">
+                        <label>
+                            Email address
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            Phone number
+                            <input type="tel" name="phone">
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Appointment request</legend>
+                    <div class="two-cols">
+                        <label>
+                            Date
+                            <input type="date" name="Appointment request" required>
+                        </label>
+                        <div class="inline">
+                            <label>
+                                <input type="hidden" name="Morning desired" value="no">
+                                <input type="checkbox" name="Morning desired" value="yes">
+                                Morning
+                            </label>
+                            <label>
+                                <input type="hidden" name="Afternoon desired" value="no">
+                                <input type="checkbox" name="Afternoon desired" value="yes">
+                                Noon
+                            </label>
+                        </div>
+                    </div>
+                    <p>Confirmation requested by</p>
+                    <div class="inline">
+                        <label>
+                            <input type="radio" name="Confirmation requested by" value="email" checked>
+                            Email
+                        </label>
+                        <label>
+                            <input type="radio" name="Confirmation requested by" value="phone">
+                            Phone call
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="Data processing confirmed" value="Yes" required>
+                            <span>I agree to the processing of my data for the handling of my request by <a href="https://mpacts.in" target="_blank">Mpacts</a>.</span>
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="btns">
+                    <input type="text" name="_gotcha" value="" style="display:none;">
+                    <input type="submit" value="Submit request">
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-card1">
+                <h1>About Us</h1>
+                <p>Vtcsrao's mission is to help project owners, consultants and Contractors to achieve efficiency and excellence in project Management and Executive Coaching</p>
+            </div>
+            <div class="footer-card2">
+                <div class="h1-class">
+                    <h1>Contact Us</h1>
+                </div>
+                <div class="mail-class">
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:vtcsrao@outlook.com">vtcsrao@outlook.com</a></p>
+                </div>
+                <div class="phone-class">
+                    <i class="fa fa-phone"></i>
+                    <p><a href="tel:+91 9940636898">+91 9940636898</a></p>
+                </div>
+                <div class="youtube-class">
+                    <i class="fa fa-youtube"></i>
+                    <p><a href="https://www.youtube.com/channel/UCTxKkQbpJzPNG03hQeH_Hzg">Vtcsrao</a></p>
+                </div>
+                <div class="linkedin-class">
+                    <i class="fa fa-linkedin"></i>
+                    <p><a href="https://www.youtube.com/channel/UCEpnj9NHhpxgVZWL1uGjGuw">Linkedin-Vtcsrao</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <h1>Copyright@Vtcsrao.in</h1>
+        </div>
+    </footer>
+</body>
+</html>
